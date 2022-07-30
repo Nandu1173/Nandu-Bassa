@@ -1,0 +1,25 @@
+# Nandu-Bassa
+int LEDpin = 13;
+int obstaclePin = 10;
+int hasObstacle = HIGH;  // LOW MEANS NO OBSTACLE
+int buzzer=7;
+int L   
+void setup() {
+  pinMode(LEDpin, OUTPUT);
+  pinMode(obstaclePin, INPUT);
+  pinMode(buzzer,OUTPUT);
+}
+
+void loop() {
+  hasObstacle = digitalRead(obstaclePin);
+
+  if (hasObstacle == 1) {
+    digitalWrite(LEDpin,LOW);
+    digitalWrite(buzzer,LOW);
+  }
+  else {  
+    digitalWrite(LEDpin, HIGH);
+    digitalWrite(buzzer, HIGH);
+  }
+  
+}
